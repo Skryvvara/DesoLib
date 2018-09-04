@@ -8,7 +8,7 @@ namespace DESO
 {
     public partial class Main : MaterialForm
     {
-        private List<Dungeon> _dungeons;
+        public List<Dungeon> _dungeons;
         public List<MaterialForm> _activeForms;
 
         public Main()
@@ -55,7 +55,7 @@ namespace DESO
             _activeForms.Add(dungeonForm);
 
             dungeonForm.CurrentDungeon = dungeon;
-            dungeonForm.Text = dungeon.DungeonName;
+            dungeonForm.Text = dungeonForm.CurrentDungeon.DungeonName;
             dungeonForm.mainForm = this;
 
             dungeonForm.Show();

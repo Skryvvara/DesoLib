@@ -62,9 +62,9 @@ namespace DESO
             {
                 //Ebonheart Pact Group Dungeons
                 new Dungeon("Pilzgrotte I", "Goblin Slayer", 0, 450, "Dreugh Slayer", 0, 50),
-                new Dungeon("Fungal Grotto II", "Arachnid slayer", 0, 200, "Obsidian Slayer", 0, 425),
-                new Dungeon("Darkshade Caverns I", "Kwama Slayer", 0, 300, "Pit Rat Slayer", 0, 175),
-                new Dungeon("Darkshade Caverns II", "Construct Slayer", 0, 800, "Kwama Slayer", 0, 200),
+                new Dungeon("Pilzgrotte II", "Arachnid slayer", 0, 200, "Obsidian Slayer", 0, 425),
+                new Dungeon("Dunkelschattenkavernen I", "Kwama Slayer", 0, 300, "Pit Rat Slayer", 0, 175),
+                new Dungeon("Dunkelschattenkavernen II", "Construct Slayer", 0, 800, "Kwama Slayer", 0, 200),
                 new Dungeon("Arx Corinium", "Snake Slayer", 0, 175, "Lamia Slayer", 0, 400),
                 new Dungeon("Direfrost Keep", "Draugr Slayer", 0, 325, "Frozen Skeleton Slayer", 0, 350),
                 new Dungeon("Blessed Curcible", "Durzog Slayer", 0, 150, "Gladiator Slayer", 0, 500),
