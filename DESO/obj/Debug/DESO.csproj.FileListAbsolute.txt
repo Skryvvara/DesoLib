@@ -1,0 +1,13 @@
+C:\Users\dimit\source\repos\DESO\DESO\bin\Debug\DESO.exe.config
+C:\Users\dimit\source\repos\DESO\DESO\bin\Debug\DESO.exe
+C:\Users\dimit\source\repos\DESO\DESO\bin\Debug\DESO.pdb
+C:\Users\dimit\source\repos\DESO\DESO\bin\Debug\MaterialSkin.dll
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.Main.resources
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.Properties.Resources.resources
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.csproj.GenerateResource.cache
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.csproj.CoreCompileInputs.cache
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.csproj.CopyComplete
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.exe
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.pdb
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.csprojAssemblyReference.cache
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.DungeonForm.resources
