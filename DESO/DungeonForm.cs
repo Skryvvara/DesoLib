@@ -27,18 +27,29 @@ namespace DESO
 
         private void DungeonForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            UpdateDefaultButton();
             mainForm._activeForms.Remove(this);
         }
 
-        /* ---   Dungeon Data Handling   --- */
+        /* ---   DUNGEON DATA HANDLING   --- */
 
         private void UpdateDungeonData()
         {
-            AchievementOneLabel.Text = CurrentDungeon.AchievementOneName;
+            string spacer = " / ";
+
+            AchievementOneLabel.Text = CurrentDungeon.AchievementOneName + spacer + CurrentDungeon.AchievementOneMax;
             AchievementOneBar.Maximum = CurrentDungeon.AchievementOneMax;
             AchievementOneBar.Value = CurrentDungeon.AchievementOneValue;
             AchievementOneInput.Text = CurrentDungeon.AchievementOneValue.ToString();
 
+            AchievementTwoLabel.Text = CurrentDungeon.AchievementTwoName + spacer + CurrentDungeon.AchievementTwoMax;
+            AchievementTwoBar.Maximum = CurrentDungeon.AchievementTwoMax;
+            AchievementTwoBar.Value = CurrentDungeon.AchievementTwoValue;
+            AchievementTwoInput.Text = CurrentDungeon.AchievementTwoValue.ToString();
+
+            CheckBoxHardmode.Checked = CurrentDungeon.HardmodeDone;
+            CheckBoxSpeedrun.Checked = CurrentDungeon.SpeedrunDone;
+            CheckBoxNoDeath.Checked = CurrentDungeon.NodeathDone;
 
             for (int i = 0; i < mainForm._dungeons.Count; i++)
             {
@@ -58,7 +69,7 @@ namespace DESO
 
         private void AchievementOneInput_TextChanged(object sender, System.EventArgs e)
         {
-            AchievementOneInput.Text = Regex.Replace(AchievementOneInput.Text, "[^0-9.]", "");
+            AchievementOneInput.Text = Regex.Replace(AchievementOneInput.Text, "[^0-9]", "");
 
             if (AchievementOneInput.Text != null && AchievementOneInput.Text != "")
             {
@@ -75,11 +86,46 @@ namespace DESO
             }
         }
 
+        private void AchievementTwoInput_TextChanged(object sender, System.EventArgs e)
+        {
+            AchievementTwoInput.Text = Regex.Replace(AchievementTwoInput.Text, "[^0-9]", "");
+
+            if (AchievementTwoInput.Text != null && AchievementTwoInput.Text != "")
+            {
+                int value = System.Convert.ToInt32(AchievementTwoInput.Text);
+
+                if (value > AchievementTwoBar.Maximum)
+                {
+                    value = AchievementTwoBar.Maximum;
+                    AchievementTwoInput.Text = value.ToString();
+                }
+
+                this.CurrentDungeon.AchievementTwoValue = value;
+                AchievementTwoBar.Value = value;
+            }
+        }
+
         private void SaveButton_Click(object sender, System.EventArgs e)
         {
             UpdateDungeonData();
         }
 
-        /* ---   Dungeon Data Handling   --- */
+        private void CheckBoxChanged(object sender, System.EventArgs e)
+        {
+            if (((MaterialCheckBox)sender).Text == "Hardmode")
+            {
+                this.CurrentDungeon.HardmodeDone = ((MaterialCheckBox)sender).Checked;
+            }
+            else if (((MaterialCheckBox)sender).Text == "Speedrun")
+            {
+                this.CurrentDungeon.SpeedrunDone = ((MaterialCheckBox)sender).Checked;
+            }
+            else if (((MaterialCheckBox)sender).Text == "No Death")
+            {
+                this.CurrentDungeon.NodeathDone = ((MaterialCheckBox)sender).Checked;
+            }
+        }
+
+        /* ---   DUNGEON DATA HANDLING   --- */
     }
 }

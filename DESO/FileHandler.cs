@@ -38,12 +38,10 @@ namespace DESO
                 return;
             }
 
-            using (var stream = File.OpenWrite(path + "/dungeons.xml"))
-            {
-                var xmlSerializer = new XmlSerializer(typeof(List<Dungeon>));
-                xmlSerializer.Serialize(stream, list);
-                stream.Close();
-            }
+            var stream = File.Open((path + "/dungeons.xml"), FileMode.Create);
+            var xmlSerializer = new XmlSerializer(typeof(List<Dungeon>));
+            xmlSerializer.Serialize(stream, list);
+            stream.Close();
         }
 
         private void CreateNewDungeonFile(string path)
