@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DungeonForm));
             this.AchievementOneBar = new MaterialSkin.Controls.MaterialProgressBar();
-            this.AchievementOneLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AchievementOneInput = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SaveButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.AchievementTwoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.AchievementTwoBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.AchievementTwoInput = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.CheckBoxHardmode = new MaterialSkin.Controls.MaterialCheckBox();
             this.CheckBoxSpeedrun = new MaterialSkin.Controls.MaterialCheckBox();
             this.CheckBoxNoDeath = new MaterialSkin.Controls.MaterialCheckBox();
+            this.AchievementOneCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
+            this.AchievementTwoCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.SuspendLayout();
             // 
             // AchievementOneBar
@@ -50,19 +50,6 @@
             this.AchievementOneBar.Name = "AchievementOneBar";
             this.AchievementOneBar.Size = new System.Drawing.Size(196, 5);
             this.AchievementOneBar.TabIndex = 0;
-            // 
-            // AchievementOneLabel
-            // 
-            this.AchievementOneLabel.AutoSize = true;
-            this.AchievementOneLabel.Depth = 0;
-            this.AchievementOneLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.AchievementOneLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AchievementOneLabel.Location = new System.Drawing.Point(8, 86);
-            this.AchievementOneLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AchievementOneLabel.Name = "AchievementOneLabel";
-            this.AchievementOneLabel.Size = new System.Drawing.Size(122, 19);
-            this.AchievementOneLabel.TabIndex = 1;
-            this.AchievementOneLabel.Text = "AchievementOne";
             // 
             // AchievementOneInput
             // 
@@ -99,19 +86,6 @@
             this.SaveButton.Text = "Speichern";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // AchievementTwoLabel
-            // 
-            this.AchievementTwoLabel.AutoSize = true;
-            this.AchievementTwoLabel.Depth = 0;
-            this.AchievementTwoLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.AchievementTwoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.AchievementTwoLabel.Location = new System.Drawing.Point(12, 161);
-            this.AchievementTwoLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.AchievementTwoLabel.Name = "AchievementTwoLabel";
-            this.AchievementTwoLabel.Size = new System.Drawing.Size(122, 19);
-            this.AchievementTwoLabel.TabIndex = 4;
-            this.AchievementTwoLabel.Text = "AchievementOne";
             // 
             // AchievementTwoBar
             // 
@@ -193,20 +167,54 @@
             this.CheckBoxNoDeath.UseVisualStyleBackColor = true;
             this.CheckBoxNoDeath.CheckedChanged += new System.EventHandler(this.CheckBoxChanged);
             // 
+            // AchievementOneCheckBox
+            // 
+            this.AchievementOneCheckBox.AutoSize = true;
+            this.AchievementOneCheckBox.Depth = 0;
+            this.AchievementOneCheckBox.Enabled = false;
+            this.AchievementOneCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
+            this.AchievementOneCheckBox.Location = new System.Drawing.Point(12, 75);
+            this.AchievementOneCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.AchievementOneCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.AchievementOneCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AchievementOneCheckBox.Name = "AchievementOneCheckBox";
+            this.AchievementOneCheckBox.Ripple = true;
+            this.AchievementOneCheckBox.Size = new System.Drawing.Size(135, 30);
+            this.AchievementOneCheckBox.TabIndex = 11;
+            this.AchievementOneCheckBox.Text = "AchievementOne";
+            this.AchievementOneCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // AchievementTwoCheckBox
+            // 
+            this.AchievementTwoCheckBox.AutoSize = true;
+            this.AchievementTwoCheckBox.Depth = 0;
+            this.AchievementTwoCheckBox.Enabled = false;
+            this.AchievementTwoCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
+            this.AchievementTwoCheckBox.Location = new System.Drawing.Point(12, 150);
+            this.AchievementTwoCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.AchievementTwoCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.AchievementTwoCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AchievementTwoCheckBox.Name = "AchievementTwoCheckBox";
+            this.AchievementTwoCheckBox.Ripple = true;
+            this.AchievementTwoCheckBox.Size = new System.Drawing.Size(137, 30);
+            this.AchievementTwoCheckBox.TabIndex = 12;
+            this.AchievementTwoCheckBox.Text = "AchievementTwo";
+            this.AchievementTwoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // DungeonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 360);
+            this.Controls.Add(this.AchievementTwoCheckBox);
+            this.Controls.Add(this.AchievementOneCheckBox);
             this.Controls.Add(this.CheckBoxNoDeath);
             this.Controls.Add(this.CheckBoxSpeedrun);
             this.Controls.Add(this.CheckBoxHardmode);
             this.Controls.Add(this.AchievementTwoInput);
             this.Controls.Add(this.AchievementTwoBar);
-            this.Controls.Add(this.AchievementTwoLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.AchievementOneInput);
-            this.Controls.Add(this.AchievementOneLabel);
             this.Controls.Add(this.AchievementOneBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DungeonForm";
@@ -221,14 +229,14 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialProgressBar AchievementOneBar;
-        private MaterialSkin.Controls.MaterialLabel AchievementOneLabel;
         private MaterialSkin.Controls.MaterialSingleLineTextField AchievementOneInput;
         private MaterialSkin.Controls.MaterialFlatButton SaveButton;
-        private MaterialSkin.Controls.MaterialLabel AchievementTwoLabel;
         private MaterialSkin.Controls.MaterialProgressBar AchievementTwoBar;
         private MaterialSkin.Controls.MaterialSingleLineTextField AchievementTwoInput;
         private MaterialSkin.Controls.MaterialCheckBox CheckBoxHardmode;
         private MaterialSkin.Controls.MaterialCheckBox CheckBoxSpeedrun;
         private MaterialSkin.Controls.MaterialCheckBox CheckBoxNoDeath;
+        private MaterialSkin.Controls.MaterialCheckBox AchievementOneCheckBox;
+        private MaterialSkin.Controls.MaterialCheckBox AchievementTwoCheckBox;
     }
 }

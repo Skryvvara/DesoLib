@@ -35,17 +35,20 @@
             this.NewsTab = new System.Windows.Forms.TabPage();
             this.PatchnotesBrowser = new System.Windows.Forms.WebBrowser();
             this.DungeonsTrialsPage = new System.Windows.Forms.TabPage();
+            this.EbonIcon = new System.Windows.Forms.PictureBox();
+            this.ButtonDarkshadecavernsII = new MaterialSkin.Controls.MaterialFlatButton();
+            this.EbonDivider = new MaterialSkin.Controls.MaterialDivider();
+            this.ButtonDarkshadecavernsI = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonFungalGrottoII = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonFungalGrottoI = new MaterialSkin.Controls.MaterialFlatButton();
-            this.DungeonLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.ButtonDarkshadecavernsI = new MaterialSkin.Controls.MaterialFlatButton();
-            this.EbonDivider = new MaterialSkin.Controls.MaterialDivider();
-            this.ButtonDarkshadecavernsII = new MaterialSkin.Controls.MaterialFlatButton();
-            this.EbonIcon = new System.Windows.Forms.PictureBox();
+            this.EbonLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.AldermiIcon = new System.Windows.Forms.PictureBox();
+            this.AldmeriLabel = new MaterialSkin.Controls.MaterialLabel();
             this.MainTabControl.SuspendLayout();
             this.NewsTab.SuspendLayout();
             this.DungeonsTrialsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EbonIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AldermiIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // materialContextMenuStrip1
@@ -102,13 +105,15 @@
             // 
             // DungeonsTrialsPage
             // 
+            this.DungeonsTrialsPage.Controls.Add(this.AldmeriLabel);
+            this.DungeonsTrialsPage.Controls.Add(this.AldermiIcon);
             this.DungeonsTrialsPage.Controls.Add(this.EbonIcon);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonDarkshadecavernsII);
             this.DungeonsTrialsPage.Controls.Add(this.EbonDivider);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonDarkshadecavernsI);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonFungalGrottoII);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonFungalGrottoI);
-            this.DungeonsTrialsPage.Controls.Add(this.DungeonLabel);
+            this.DungeonsTrialsPage.Controls.Add(this.EbonLabel);
             this.DungeonsTrialsPage.Location = new System.Drawing.Point(4, 22);
             this.DungeonsTrialsPage.Name = "DungeonsTrialsPage";
             this.DungeonsTrialsPage.Padding = new System.Windows.Forms.Padding(3);
@@ -117,13 +122,67 @@
             this.DungeonsTrialsPage.Text = "Dungeons & Trials";
             this.DungeonsTrialsPage.UseVisualStyleBackColor = true;
             // 
+            // EbonIcon
+            // 
+            this.EbonIcon.Image = ((System.Drawing.Image)(resources.GetObject("EbonIcon.Image")));
+            this.EbonIcon.Location = new System.Drawing.Point(6, 6);
+            this.EbonIcon.Name = "EbonIcon";
+            this.EbonIcon.Size = new System.Drawing.Size(45, 45);
+            this.EbonIcon.TabIndex = 6;
+            this.EbonIcon.TabStop = false;
+            // 
+            // ButtonDarkshadecavernsII
+            // 
+            this.ButtonDarkshadecavernsII.AutoSize = true;
+            this.ButtonDarkshadecavernsII.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonDarkshadecavernsII.Depth = 0;
+            this.ButtonDarkshadecavernsII.Icon = null;
+            this.ButtonDarkshadecavernsII.Location = new System.Drawing.Point(6, 204);
+            this.ButtonDarkshadecavernsII.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonDarkshadecavernsII.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonDarkshadecavernsII.Name = "ButtonDarkshadecavernsII";
+            this.ButtonDarkshadecavernsII.Primary = false;
+            this.ButtonDarkshadecavernsII.Size = new System.Drawing.Size(224, 36);
+            this.ButtonDarkshadecavernsII.TabIndex = 5;
+            this.ButtonDarkshadecavernsII.Text = "Dunkelschattenkavernen II";
+            this.ButtonDarkshadecavernsII.UseVisualStyleBackColor = true;
+            this.ButtonDarkshadecavernsII.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // EbonDivider
+            // 
+            this.EbonDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EbonDivider.Depth = 0;
+            this.EbonDivider.Location = new System.Drawing.Point(237, 0);
+            this.EbonDivider.MouseState = MaterialSkin.MouseState.HOVER;
+            this.EbonDivider.Name = "EbonDivider";
+            this.EbonDivider.Size = new System.Drawing.Size(3, 738);
+            this.EbonDivider.TabIndex = 4;
+            this.EbonDivider.Text = "materialDivider1";
+            // 
+            // ButtonDarkshadecavernsI
+            // 
+            this.ButtonDarkshadecavernsI.AutoSize = true;
+            this.ButtonDarkshadecavernsI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonDarkshadecavernsI.Depth = 0;
+            this.ButtonDarkshadecavernsI.Icon = null;
+            this.ButtonDarkshadecavernsI.Location = new System.Drawing.Point(6, 156);
+            this.ButtonDarkshadecavernsI.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonDarkshadecavernsI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonDarkshadecavernsI.Name = "ButtonDarkshadecavernsI";
+            this.ButtonDarkshadecavernsI.Primary = false;
+            this.ButtonDarkshadecavernsI.Size = new System.Drawing.Size(220, 36);
+            this.ButtonDarkshadecavernsI.TabIndex = 3;
+            this.ButtonDarkshadecavernsI.Text = "Dunkelschattenkavernen I";
+            this.ButtonDarkshadecavernsI.UseVisualStyleBackColor = true;
+            this.ButtonDarkshadecavernsI.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
             // ButtonFungalGrottoII
             // 
             this.ButtonFungalGrottoII.AutoSize = true;
             this.ButtonFungalGrottoII.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ButtonFungalGrottoII.Depth = 0;
             this.ButtonFungalGrottoII.Icon = null;
-            this.ButtonFungalGrottoII.Location = new System.Drawing.Point(12, 108);
+            this.ButtonFungalGrottoII.Location = new System.Drawing.Point(6, 108);
             this.ButtonFungalGrottoII.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonFungalGrottoII.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonFungalGrottoII.Name = "ButtonFungalGrottoII";
@@ -140,7 +199,7 @@
             this.ButtonFungalGrottoI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ButtonFungalGrottoI.Depth = 0;
             this.ButtonFungalGrottoI.Icon = null;
-            this.ButtonFungalGrottoI.Location = new System.Drawing.Point(12, 60);
+            this.ButtonFungalGrottoI.Location = new System.Drawing.Point(6, 60);
             this.ButtonFungalGrottoI.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonFungalGrottoI.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonFungalGrottoI.Name = "ButtonFungalGrottoI";
@@ -151,72 +210,40 @@
             this.ButtonFungalGrottoI.UseVisualStyleBackColor = true;
             this.ButtonFungalGrottoI.Click += new System.EventHandler(this.CallDungeonForm);
             // 
-            // DungeonLabel
+            // EbonLabel
             // 
-            this.DungeonLabel.AutoSize = true;
-            this.DungeonLabel.Depth = 0;
-            this.DungeonLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.DungeonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DungeonLabel.Location = new System.Drawing.Point(63, 18);
-            this.DungeonLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DungeonLabel.Name = "DungeonLabel";
-            this.DungeonLabel.Size = new System.Drawing.Size(104, 19);
-            this.DungeonLabel.TabIndex = 0;
-            this.DungeonLabel.Text = "Ebenherz-Pakt";
+            this.EbonLabel.AutoSize = true;
+            this.EbonLabel.Depth = 0;
+            this.EbonLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.EbonLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.EbonLabel.Location = new System.Drawing.Point(57, 18);
+            this.EbonLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.EbonLabel.Name = "EbonLabel";
+            this.EbonLabel.Size = new System.Drawing.Size(104, 19);
+            this.EbonLabel.TabIndex = 0;
+            this.EbonLabel.Text = "Ebenherz-Pakt";
             // 
-            // ButtonDarkshadecavernsI
+            // AldermiIcon
             // 
-            this.ButtonDarkshadecavernsI.AutoSize = true;
-            this.ButtonDarkshadecavernsI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonDarkshadecavernsI.Depth = 0;
-            this.ButtonDarkshadecavernsI.Icon = null;
-            this.ButtonDarkshadecavernsI.Location = new System.Drawing.Point(12, 156);
-            this.ButtonDarkshadecavernsI.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonDarkshadecavernsI.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonDarkshadecavernsI.Name = "ButtonDarkshadecavernsI";
-            this.ButtonDarkshadecavernsI.Primary = false;
-            this.ButtonDarkshadecavernsI.Size = new System.Drawing.Size(220, 36);
-            this.ButtonDarkshadecavernsI.TabIndex = 3;
-            this.ButtonDarkshadecavernsI.Text = "Dunkelschattenkavernen I";
-            this.ButtonDarkshadecavernsI.UseVisualStyleBackColor = true;
-            this.ButtonDarkshadecavernsI.Click += new System.EventHandler(this.CallDungeonForm);
+            this.AldermiIcon.Image = ((System.Drawing.Image)(resources.GetObject("AldermiIcon.Image")));
+            this.AldermiIcon.Location = new System.Drawing.Point(246, 6);
+            this.AldermiIcon.Name = "AldermiIcon";
+            this.AldermiIcon.Size = new System.Drawing.Size(45, 45);
+            this.AldermiIcon.TabIndex = 7;
+            this.AldermiIcon.TabStop = false;
             // 
-            // EbonDivider
+            // AldmeriLabel
             // 
-            this.EbonDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.EbonDivider.Depth = 0;
-            this.EbonDivider.Location = new System.Drawing.Point(243, 0);
-            this.EbonDivider.MouseState = MaterialSkin.MouseState.HOVER;
-            this.EbonDivider.Name = "EbonDivider";
-            this.EbonDivider.Size = new System.Drawing.Size(3, 738);
-            this.EbonDivider.TabIndex = 4;
-            this.EbonDivider.Text = "materialDivider1";
-            // 
-            // ButtonDarkshadecavernsII
-            // 
-            this.ButtonDarkshadecavernsII.AutoSize = true;
-            this.ButtonDarkshadecavernsII.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonDarkshadecavernsII.Depth = 0;
-            this.ButtonDarkshadecavernsII.Icon = null;
-            this.ButtonDarkshadecavernsII.Location = new System.Drawing.Point(12, 204);
-            this.ButtonDarkshadecavernsII.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonDarkshadecavernsII.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonDarkshadecavernsII.Name = "ButtonDarkshadecavernsII";
-            this.ButtonDarkshadecavernsII.Primary = false;
-            this.ButtonDarkshadecavernsII.Size = new System.Drawing.Size(224, 36);
-            this.ButtonDarkshadecavernsII.TabIndex = 5;
-            this.ButtonDarkshadecavernsII.Text = "Dunkelschattenkavernen II";
-            this.ButtonDarkshadecavernsII.UseVisualStyleBackColor = true;
-            this.ButtonDarkshadecavernsII.Click += new System.EventHandler(this.CallDungeonForm);
-            // 
-            // EbonIcon
-            // 
-            this.EbonIcon.Image = ((System.Drawing.Image)(resources.GetObject("EbonIcon.Image")));
-            this.EbonIcon.Location = new System.Drawing.Point(12, 6);
-            this.EbonIcon.Name = "EbonIcon";
-            this.EbonIcon.Size = new System.Drawing.Size(45, 45);
-            this.EbonIcon.TabIndex = 6;
-            this.EbonIcon.TabStop = false;
+            this.AldmeriLabel.AutoSize = true;
+            this.AldmeriLabel.Depth = 0;
+            this.AldmeriLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.AldmeriLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.AldmeriLabel.Location = new System.Drawing.Point(297, 18);
+            this.AldmeriLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AldmeriLabel.Name = "AldmeriLabel";
+            this.AldmeriLabel.Size = new System.Drawing.Size(130, 19);
+            this.AldmeriLabel.TabIndex = 8;
+            this.AldmeriLabel.Text = "Aldmeri-Dominion";
             // 
             // Main
             // 
@@ -237,6 +264,7 @@
             this.DungeonsTrialsPage.ResumeLayout(false);
             this.DungeonsTrialsPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EbonIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AldermiIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,13 +277,15 @@
         private System.Windows.Forms.TabPage NewsTab;
         private System.Windows.Forms.WebBrowser PatchnotesBrowser;
         private System.Windows.Forms.TabPage DungeonsTrialsPage;
-        private MaterialSkin.Controls.MaterialLabel DungeonLabel;
+        private MaterialSkin.Controls.MaterialLabel EbonLabel;
         private MaterialSkin.Controls.MaterialFlatButton ButtonFungalGrottoI;
         private MaterialSkin.Controls.MaterialFlatButton ButtonFungalGrottoII;
         private MaterialSkin.Controls.MaterialFlatButton ButtonDarkshadecavernsI;
         private MaterialSkin.Controls.MaterialDivider EbonDivider;
         private MaterialSkin.Controls.MaterialFlatButton ButtonDarkshadecavernsII;
         private System.Windows.Forms.PictureBox EbonIcon;
+        private System.Windows.Forms.PictureBox AldermiIcon;
+        private MaterialSkin.Controls.MaterialLabel AldmeriLabel;
     }
 }
 

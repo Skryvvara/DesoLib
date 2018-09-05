@@ -37,12 +37,16 @@ namespace DESO
         {
             string spacer = " / ";
 
-            AchievementOneLabel.Text = CurrentDungeon.AchievementOneName + spacer + CurrentDungeon.AchievementOneMax;
+            AchievementOneCheckBox.Text = CurrentDungeon.AchievementOneName + spacer + CurrentDungeon.AchievementOneMax;
+            AchievementOneCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementOneValue, CurrentDungeon.AchievementOneMax);
+
             AchievementOneBar.Maximum = CurrentDungeon.AchievementOneMax;
             AchievementOneBar.Value = CurrentDungeon.AchievementOneValue;
             AchievementOneInput.Text = CurrentDungeon.AchievementOneValue.ToString();
 
-            AchievementTwoLabel.Text = CurrentDungeon.AchievementTwoName + spacer + CurrentDungeon.AchievementTwoMax;
+            AchievementTwoCheckBox.Text = CurrentDungeon.AchievementTwoName + spacer + CurrentDungeon.AchievementTwoMax;
+            AchievementTwoCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementTwoValue, CurrentDungeon.AchievementTwoMax);
+
             AchievementTwoBar.Maximum = CurrentDungeon.AchievementTwoMax;
             AchievementTwoBar.Value = CurrentDungeon.AchievementTwoValue;
             AchievementTwoInput.Text = CurrentDungeon.AchievementTwoValue.ToString();
@@ -59,6 +63,14 @@ namespace DESO
                     SaveDungeonData();
                 }
             }
+        }
+
+        private bool IsSameValue(int value1, int value2)
+        {
+            if (value1 == value2)
+                return true;
+            else
+                return false;
         }
 
         private void SaveDungeonData()
@@ -82,7 +94,8 @@ namespace DESO
                 }
 
                 this.CurrentDungeon.AchievementOneValue = value;
-                AchievementOneBar.Value = value;
+                //AchievementOneBar.Value = value;
+                UpdateDungeonData();
             }
         }
 
@@ -101,7 +114,8 @@ namespace DESO
                 }
 
                 this.CurrentDungeon.AchievementTwoValue = value;
-                AchievementTwoBar.Value = value;
+                //AchievementTwoBar.Value = value;
+                UpdateDungeonData();
             }
         }
 
