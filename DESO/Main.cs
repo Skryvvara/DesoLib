@@ -38,12 +38,14 @@ namespace DESO
                         if(_activeForms[j].Text == ((MaterialFlatButton)sender).Text)
                         {
                             isOpen = true;
+                            break;
                         }
                     }
 
                     if (isOpen == false)
                     {
                         OpenDungeonForm(_dungeons[i]);
+                        break;
                     }
                 }
             }
@@ -59,6 +61,28 @@ namespace DESO
             dungeonForm.mainForm = this;
 
             dungeonForm.Show();
+        }
+
+        private void ButtonCloseAllForms_Click(object sender, System.EventArgs e)
+        {
+            int i = 0;
+            while (i < _activeForms.Count)
+                _activeForms[i].Close();
+        }
+
+        private void ButtonRecreateDungeonFile_Click(object sender, System.EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Möchtest du Dungeon-Datei wirklich neuanfordern? Dein eingetragener Fortschritt geht dabei verloren.",
+                    "Warnung", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                var fileHandler = new FileHandler();
+                fileHandler.ReCreateDungeonFile("C:/deso");
+            }
+            else
+            {
+
+            }
         }
     }
 }

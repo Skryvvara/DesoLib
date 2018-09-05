@@ -217,7 +217,10 @@
             this.Controls.Add(this.AchievementOneInput);
             this.Controls.Add(this.AchievementOneBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DungeonForm";
+            this.Sizable = false;
             this.Text = "DungeonForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DungeonForm_FormClosed);
             this.Shown += new System.EventHandler(this.DungeonForm_Shown);
