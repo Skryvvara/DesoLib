@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DungeonForm));
             this.AchievementOneBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.AchievementOneInput = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.SaveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.AchievementTwoBar = new MaterialSkin.Controls.MaterialProgressBar();
             this.AchievementTwoInput = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.CheckBoxHardmode = new MaterialSkin.Controls.MaterialCheckBox();
@@ -69,23 +68,6 @@
             this.AchievementOneInput.Text = "0";
             this.AchievementOneInput.UseSystemPasswordChar = false;
             this.AchievementOneInput.TextChanged += new System.EventHandler(this.AchievementOneInput_TextChanged);
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.AutoSize = true;
-            this.SaveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SaveButton.Depth = 0;
-            this.SaveButton.Icon = null;
-            this.SaveButton.Location = new System.Drawing.Point(16, 316);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.SaveButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Primary = false;
-            this.SaveButton.Size = new System.Drawing.Size(94, 36);
-            this.SaveButton.TabIndex = 3;
-            this.SaveButton.Text = "Speichern";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // AchievementTwoBar
             // 
@@ -205,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 360);
+            this.ClientSize = new System.Drawing.Size(293, 317);
             this.Controls.Add(this.AchievementTwoCheckBox);
             this.Controls.Add(this.AchievementOneCheckBox);
             this.Controls.Add(this.CheckBoxNoDeath);
@@ -213,7 +195,6 @@
             this.Controls.Add(this.CheckBoxHardmode);
             this.Controls.Add(this.AchievementTwoInput);
             this.Controls.Add(this.AchievementTwoBar);
-            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.AchievementOneInput);
             this.Controls.Add(this.AchievementOneBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -233,7 +214,6 @@
 
         private MaterialSkin.Controls.MaterialProgressBar AchievementOneBar;
         private MaterialSkin.Controls.MaterialSingleLineTextField AchievementOneInput;
-        private MaterialSkin.Controls.MaterialFlatButton SaveButton;
         private MaterialSkin.Controls.MaterialProgressBar AchievementTwoBar;
         private MaterialSkin.Controls.MaterialSingleLineTextField AchievementTwoInput;
         private MaterialSkin.Controls.MaterialCheckBox CheckBoxHardmode;

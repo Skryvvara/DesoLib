@@ -25,7 +25,7 @@ namespace DESO.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:/Darkyne/DesoLib")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Darkyne\\DesoLib\\")]
         public string DefaultDataPath {
             get {
                 return ((string)(this["DefaultDataPath"]));
@@ -37,13 +37,37 @@ namespace DESO.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:/Darkyne/DesoLib")]
-        public string CustomDataPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LightColorScheme {
             get {
-                return ((string)(this["CustomDataPath"]));
+                return ((bool)(this["LightColorScheme"]));
             }
             set {
-                this["CustomDataPath"] = value;
+                this["LightColorScheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dungeons.xml")]
+        public string DefaultFileName {
+            get {
+                return ((string)(this["DefaultFileName"]));
+            }
+            set {
+                this["DefaultFileName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Darkyne\\DesoLib\\")]
+        public string RestoreDataPath {
+            get {
+                return ((string)(this["RestoreDataPath"]));
+            }
+            set {
+                this["RestoreDataPath"] = value;
             }
         }
     }

@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using MaterialSkin;
-using MaterialSkin.Animations;
+using System.Diagnostics;
 using MaterialSkin.Controls;
 
 namespace DESO
 {
     public partial class DungeonForm : MaterialForm
     {
+        Properties.Settings _settings = new Properties.Settings();
+
         public Dungeon CurrentDungeon;
         public Main mainForm;
 
@@ -17,7 +17,7 @@ namespace DESO
             InitializeComponent();
 
             var themeManager = new ThemeManager();
-            themeManager.SetTheme(this);
+            themeManager.SetTheme(this, _settings.LightColorScheme);
         }
 
         private void DungeonForm_Shown(object sender, System.EventArgs e)
@@ -27,7 +27,7 @@ namespace DESO
 
         private void DungeonForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            UpdateDefaultButton();
+            SaveDungeonData();
             mainForm.ChangeAllButtonsVisibility(mainForm.ShowAllDungeons);
             mainForm._activeForms.Remove(this);
         }
@@ -42,6 +42,11 @@ namespace DESO
             {
                 AchievementOneCheckBox.Text = CurrentDungeon.AchievementOneName + spacer + CurrentDungeon.AchievementOneMax;
                 AchievementOneCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementOneValue, CurrentDungeon.AchievementOneMax);
+
+                if (CurrentDungeon.AchievementOneValue > CurrentDungeon.AchievementOneMax)
+                    CurrentDungeon.AchievementOneValue = CurrentDungeon.AchievementOneMax;
+                if (CurrentDungeon.AchievementTwoValue > CurrentDungeon.AchievementTwoMax)
+                    CurrentDungeon.AchievementTwoValue = CurrentDungeon.AchievementTwoMax;
 
                 AchievementOneBar.Maximum = CurrentDungeon.AchievementOneMax;
                 AchievementOneBar.Value = CurrentDungeon.AchievementOneValue;
@@ -68,31 +73,30 @@ namespace DESO
             CheckBoxHardmode.Checked = CurrentDungeon.HardmodeDone;
             CheckBoxSpeedrun.Checked = CurrentDungeon.SpeedrunDone;
             CheckBoxNoDeath.Checked = CurrentDungeon.NodeathDone;
-
-            CurrentDungeon.CheckCompletion();
-
-            for (int i = 0; i < mainForm._dungeons.Count; i++)
-            {
-                if (mainForm._dungeons[i].DungeonName == CurrentDungeon.DungeonName)
-                {
-                    mainForm._dungeons[i] = CurrentDungeon;
-                    SaveDungeonData();
-                }
-            }
+            
+            SaveDungeonData();
         }
 
-        private bool IsSameValue(int value1, int value2)
+        private bool IsSameValue(int source, int comparison)
         {
-            if (value1 == value2)
-                return true;
-            else
-                return false;
+            return source == comparison;
         }
 
         private void SaveDungeonData()
         {
+            for (int i = 0; i < mainForm._dungeons.Count; i++)
+            {
+                if (mainForm._dungeons[i].DungeonName == CurrentDungeon.DungeonName)
+                {
+                    CurrentDungeon.CheckCompletion();
+                    mainForm._dungeons[i] = CurrentDungeon;
+                    Debug.Print(CurrentDungeon.IsComplete.ToString());
+                    break;
+                }
+            }
+
             var fileHandler = new FileHandler();
-            fileHandler.WriteToFile("C:/deso", mainForm._dungeons);
+            fileHandler.WriteToFile(_settings.DefaultDataPath, mainForm._dungeons);
         }
 
         private void AchievementOneInput_TextChanged(object sender, System.EventArgs e)
@@ -109,8 +113,7 @@ namespace DESO
                     AchievementOneInput.Text = value.ToString();
                 }
 
-                this.CurrentDungeon.AchievementOneValue = value;
-                //AchievementOneBar.Value = value;
+                CurrentDungeon.AchievementOneValue = value;
                 UpdateDungeonData();
             }
         }
@@ -129,33 +132,30 @@ namespace DESO
                     AchievementTwoInput.Text = value.ToString();
                 }
 
-                this.CurrentDungeon.AchievementTwoValue = value;
-                //AchievementTwoBar.Value = value;
+                CurrentDungeon.AchievementTwoValue = value;
                 UpdateDungeonData();
             }
         }
 
-        private void SaveButton_Click(object sender, System.EventArgs e)
-        {
-            UpdateDungeonData();
-        }
-
         private void CheckBoxChanged(object sender, System.EventArgs e)
         {
-            if (((MaterialCheckBox)sender).Text == "Hardmode")
+            MaterialCheckBox checkBox = ((MaterialCheckBox)sender);
+
+            switch (checkBox.Text)
             {
-                this.CurrentDungeon.HardmodeDone = ((MaterialCheckBox)sender).Checked;
-            }
-            else if (((MaterialCheckBox)sender).Text == "Speedrun")
-            {
-                this.CurrentDungeon.SpeedrunDone = ((MaterialCheckBox)sender).Checked;
-            }
-            else if (((MaterialCheckBox)sender).Text == "No Death")
-            {
-                this.CurrentDungeon.NodeathDone = ((MaterialCheckBox)sender).Checked;
+                case "Hardmode":
+                    CurrentDungeon.HardmodeDone = checkBox.Checked;
+                    break;
+                case "Speedrun":
+                    CurrentDungeon.SpeedrunDone = checkBox.Checked;
+                    break;
+                case "No Death":
+                    CurrentDungeon.NodeathDone = checkBox.Checked;
+                    break;
+                default:
+                    break;
             }
         }
-
         /* ---   DUNGEON DATA HANDLING   --- */
     }
 }

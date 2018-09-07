@@ -27,10 +27,18 @@ namespace DESO
             FindAllButtons();
 
             var themeManager = new ThemeManager();
-            themeManager.SetTheme(this);
+            themeManager.SetTheme(this, _settings.LightColorScheme);
 
             var fileHandler = new FileHandler();
-            _dungeons = fileHandler.ReadFromFile(_settings.CustomDataPath);
+            _dungeons = fileHandler.ReadFromFile(_settings.DefaultDataPath);
+
+
+            // HIDE UNFINISHED
+
+            SearchInputLine.Visible = false;
+            ButtonSearch.Visible = false;
+
+            // HIDE UNFINISHED
         }
 
         private void CallDungeonForm(object sender, System.EventArgs e)
@@ -50,7 +58,7 @@ namespace DESO
                         }
                     }
 
-                    if (isOpen == false)
+                    if (!isOpen)
                     {
                         OpenDungeonForm(_dungeons[i]);
                         break;
@@ -91,27 +99,62 @@ namespace DESO
 
         private void ButtonRecreateDungeonFile_Click(object sender, System.EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Möchten Sie die Dungeon-Datei wirklich neu anfordern? Ihr bisher gespeicherter Fortschritt geht dabei verloren.",
-                    "Warnung", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if(result == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("Möchten Sie die Dungeon-Datei wirklich neu anfordern?", "Warnung",
+                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
-                var fileHandler = new FileHandler();
-                fileHandler.ReCreateDungeonFile(_settings.CustomDataPath);
-
-
-                _dungeons = fileHandler.ReadFromFile(_settings.CustomDataPath);
-                for (int i = 0; i < _dungeons.Count; i++)
+                DialogResult result2 = MessageBox.Show("Möchten Sie Ihre bisherigen eigetragenen Daten behalten?", "Warnung",
+                                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result2 == DialogResult.Yes)
                 {
-                    _dungeons[i].CheckCompletion();
-                    //Debug.Print(_dungeons[i].DungeonName + _dungeons[i].IsComplete.ToString());
+                    UpdateDungeonFile();
+                    ChangeAllButtonsVisibility(true);
                 }
+                else if (result2 == DialogResult.No)
+                {
+                    var fileHandler = new FileHandler();
+                    fileHandler.ReCreateDungeonFile(_settings.DefaultDataPath);
 
-                ChangeAllButtonsVisibility(true);
+                    _dungeons = fileHandler.ReadFromFile(_settings.DefaultDataPath);
+                    for (int i = 0; i < _dungeons.Count; i++)
+                    {
+                        _dungeons[i].CheckCompletion();
+                        //Debug.Print(_dungeons[i].DungeonName + _dungeons[i].IsComplete.ToString());
+                    }
+
+                    ChangeAllButtonsVisibility(true);
+                }
+                else
+                {
+                    return;
+                }
             }
             else
             {
-
+                return;
             }
+        }
+
+        private void UpdateDungeonFile()
+        {
+            var fileHandler = new FileHandler();
+            List<Dungeon> newDungeonFile = fileHandler.GetFreshDungeonList();
+
+            for (int i = 0; i < newDungeonFile.Count; i++)
+            {
+                Dungeon dungeon = _dungeons.Find(x => x.DungeonName == newDungeonFile[i].DungeonName);
+                if (dungeon != null)
+                {
+                    newDungeonFile[i].AchievementOneValue = dungeon.AchievementOneValue;
+                    newDungeonFile[i].AchievementTwoValue = dungeon.AchievementTwoValue;
+                    newDungeonFile[i].HardmodeDone = dungeon.HardmodeDone;
+                    newDungeonFile[i].SpeedrunDone = dungeon.SpeedrunDone;
+                    newDungeonFile[i].NodeathDone = dungeon.NodeathDone;
+                    newDungeonFile[i].IsComplete = dungeon.IsComplete;
+                }
+            }
+
+            _dungeons = newDungeonFile;
         }
 
         private void CheckBoxHideCompleted_CheckedChanged(object sender, System.EventArgs e)
@@ -139,6 +182,38 @@ namespace DESO
                     }
                 }
             }
+        }
+
+        private void SearchForSet(object sender, System.EventArgs e)
+        {
+            
+        }
+
+        private void CallSettingsForm(object sender, System.EventArgs e)
+        {
+            bool isOpen = false;
+            for (int i = 0; i < _activeForms.Count; i++)
+            {
+                if (_activeForms[i].Text == "Einstellungen")
+                {
+                    isOpen = true;
+                    break;
+                }
+            }
+
+            if (!isOpen)
+            {
+                var settingsForm = new SettingsForm();
+                settingsForm.mainForm = this;
+                _activeForms.Add(settingsForm);
+
+                settingsForm.Show();
+            }
+        }
+
+        public void RestartApplication()
+        {
+            Application.Restart();
         }
     }
 }

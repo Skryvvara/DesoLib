@@ -3,10 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="DefaultDataPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:/Darkyne/DesoLib</Value>
+      <Value Profile="(Default)">C:\Darkyne\DesoLib\</Value>
     </Setting>
-    <Setting Name="CustomDataPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:/Darkyne/DesoLib</Value>
+    <Setting Name="LightColorScheme" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DefaultFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dungeons.xml</Value>
+    </Setting>
+    <Setting Name="RestoreDataPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Darkyne\DesoLib\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

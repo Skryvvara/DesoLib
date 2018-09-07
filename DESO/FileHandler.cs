@@ -6,59 +6,59 @@ namespace DESO
 {
     public class FileHandler
     {
-        public List<Dungeon> ReadFromFile(string path)
+        public List<Dungeon> ReadFromFile(string path, string filename = "dungeons.xml")
         {
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
 
-            if (!File.Exists(path + "/dungeons.xml"))
+            if (!File.Exists(path + filename))
             {
-                CreateNewDungeonFile(path + "/dungeons.xml");
+                CreateNewDungeonFile(path + filename);
             }
 
-            using (var stream = File.OpenRead(path + "/dungeons.xml"))
+            using (var stream = File.OpenRead(path + filename))
             {
                 var xmlSerializer = new XmlSerializer(typeof(List<Dungeon>));
                 return (List<Dungeon>) xmlSerializer.Deserialize((stream));
             }
         }
 
-        public void WriteToFile(string path, List<Dungeon> list)
+        public void WriteToFile(string path, List<Dungeon> list, string filename = "dungeons.xml")
         {
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
 
-            if (!File.Exists(path + "/dungeons.xml"))
+            if (!File.Exists(path + filename))
             {
-                CreateNewDungeonFile(path + "/dungeons.xml");
+                CreateNewDungeonFile(path + filename);
                 return;
             }
 
-            var stream = File.Open((path + "/dungeons.xml"), FileMode.Create);
+            var stream = File.Open((path + filename), FileMode.Create);
             var xmlSerializer = new XmlSerializer(typeof(List<Dungeon>));
             xmlSerializer.Serialize(stream, list);
             stream.Close();
         }
 
-        public void ReCreateDungeonFile(string path)
+        public void ReCreateDungeonFile(string path, string filename = "dungeons.xml")
         {
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
 
-            if (!File.Exists(path + "/dungeons.xml"))
+            if (!File.Exists(path + filename))
             {
-                CreateNewDungeonFile(path + "/dungeons.xml");
+                CreateNewDungeonFile(path + filename);
                 return;
             }
 
-            File.Delete(path + "/dungeons.xml");
-            CreateNewDungeonFile(path + "/dungeons.xml");
+            File.Delete(path + filename);
+            CreateNewDungeonFile(path + filename);
         }
 
         private void CreateNewDungeonFile(string path)
@@ -71,7 +71,7 @@ namespace DESO
             }
         }
 
-        private List<Dungeon> GetFreshDungeonList()
+        public List<Dungeon> GetFreshDungeonList()
         {
             List<Dungeon> createdDungeons = new List<Dungeon>
             {
@@ -117,9 +117,13 @@ namespace DESO
                 new Dungeon("Mondjägerfeste", "Dire Wolf Slayer", 0, 200, "Hulking Werewolf Slayer", 0, 50),
 
                 //Trials
-                new Dungeon("Aetherisches Archiv", "", 1, 1, "", 1, 1, false, false, false, false, true),
-                new Dungeon("Zitadelle von Hel-Ra", "", 1, 1, "", 1, 1, false, false, false, false, true),
-                new Dungeon("Sanctum Ophidia", "", 1, 1, "", 1, 1, false, false, false, false, true)
+                new Dungeon("Aetherisches Archiv", "", 1, 1, "", 1, 1, true),
+                new Dungeon("Zitadelle von Hel-Ra", "", 1, 1, "", 1, 1, true),
+                new Dungeon("Sanctum Ophidia", "", 1, 1, "", 1, 1, true),
+                new Dungeon("Schlund von Lorkhaj", "", 1, 1, "", 1, 1, true),
+                new Dungeon("Hallen der Fertigung", "", 1, 1, "", 1 , 1, true),
+                new Dungeon("Anstalt Sanctorium", "", 1, 1, "", 1, 1, true),
+                new Dungeon("Wolkenruh", "", 1, 1, "", 1, 1, true)
             };
 
             return createdDungeons;

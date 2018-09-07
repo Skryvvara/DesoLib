@@ -11,3 +11,4 @@ C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.exe
 C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.pdb
 C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.csprojAssemblyReference.cache
 C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.DungeonForm.resources
+C:\Users\dimit\source\repos\DESO\DESO\obj\Debug\DESO.SettingsForm.resources
