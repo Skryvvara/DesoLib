@@ -205,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 360);
+            this.ClientSize = new System.Drawing.Size(293, 360);
             this.Controls.Add(this.AchievementTwoCheckBox);
             this.Controls.Add(this.AchievementOneCheckBox);
             this.Controls.Add(this.CheckBoxNoDeath);

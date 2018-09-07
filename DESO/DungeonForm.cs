@@ -28,6 +28,7 @@ namespace DESO
         private void DungeonForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             UpdateDefaultButton();
+            mainForm.ChangeAllButtonsVisibility(mainForm.ShowAllDungeons);
             mainForm._activeForms.Remove(this);
         }
 
@@ -37,29 +38,44 @@ namespace DESO
         {
             string spacer = " / ";
 
-            AchievementOneCheckBox.Text = CurrentDungeon.AchievementOneName + spacer + CurrentDungeon.AchievementOneMax;
-            AchievementOneCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementOneValue, CurrentDungeon.AchievementOneMax);
+            if (!CurrentDungeon.IsTrial)
+            {
+                AchievementOneCheckBox.Text = CurrentDungeon.AchievementOneName + spacer + CurrentDungeon.AchievementOneMax;
+                AchievementOneCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementOneValue, CurrentDungeon.AchievementOneMax);
 
-            AchievementOneBar.Maximum = CurrentDungeon.AchievementOneMax;
-            AchievementOneBar.Value = CurrentDungeon.AchievementOneValue;
-            AchievementOneInput.Text = CurrentDungeon.AchievementOneValue.ToString();
+                AchievementOneBar.Maximum = CurrentDungeon.AchievementOneMax;
+                AchievementOneBar.Value = CurrentDungeon.AchievementOneValue;
+                AchievementOneInput.Text = CurrentDungeon.AchievementOneValue.ToString();
 
-            AchievementTwoCheckBox.Text = CurrentDungeon.AchievementTwoName + spacer + CurrentDungeon.AchievementTwoMax;
-            AchievementTwoCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementTwoValue, CurrentDungeon.AchievementTwoMax);
+                AchievementTwoCheckBox.Text = CurrentDungeon.AchievementTwoName + spacer + CurrentDungeon.AchievementTwoMax;
+                AchievementTwoCheckBox.Checked = IsSameValue(CurrentDungeon.AchievementTwoValue, CurrentDungeon.AchievementTwoMax);
 
-            AchievementTwoBar.Maximum = CurrentDungeon.AchievementTwoMax;
-            AchievementTwoBar.Value = CurrentDungeon.AchievementTwoValue;
-            AchievementTwoInput.Text = CurrentDungeon.AchievementTwoValue.ToString();
+                AchievementTwoBar.Maximum = CurrentDungeon.AchievementTwoMax;
+                AchievementTwoBar.Value = CurrentDungeon.AchievementTwoValue;
+                AchievementTwoInput.Text = CurrentDungeon.AchievementTwoValue.ToString();
+            }
+            else
+            {
+                AchievementOneCheckBox.Visible = false;
+                AchievementOneBar.Visible = false;
+                AchievementOneInput.Visible = false;
+
+                AchievementTwoCheckBox.Visible = false;
+                AchievementTwoBar.Visible = false;
+                AchievementTwoInput.Visible = false;
+            }
 
             CheckBoxHardmode.Checked = CurrentDungeon.HardmodeDone;
             CheckBoxSpeedrun.Checked = CurrentDungeon.SpeedrunDone;
             CheckBoxNoDeath.Checked = CurrentDungeon.NodeathDone;
 
+            CurrentDungeon.CheckCompletion();
+
             for (int i = 0; i < mainForm._dungeons.Count; i++)
             {
-                if (mainForm._dungeons[i].DungeonName == this.CurrentDungeon.DungeonName)
+                if (mainForm._dungeons[i].DungeonName == CurrentDungeon.DungeonName)
                 {
-                    mainForm._dungeons[i] = this.CurrentDungeon;
+                    mainForm._dungeons[i] = CurrentDungeon;
                     SaveDungeonData();
                 }
             }

@@ -113,10 +113,13 @@ namespace DESO
                 new Dungeon("Blutquellschmiede", "Dreadhorn Warrior Slayer", 0, 300, "Firehide Slayer", 0, 50),
                 new Dungeon("Hort der Schuppenruferin", "Ogre Slayer", 0, 50, "Veteran Cultist Slayer", 0, 120),
                 new Dungeon("Krallenhort", "Necromancer Slayer", 0, 350, "Skeleton Slayer", 0, 500),
-                new Dungeon("Marsch der Aufopferung", "", 0, 100, "", 0, 100),
-                new Dungeon("Mondjägerfeste", "", 0, 100, "", 0, 100)
+                new Dungeon("Marsch der Aufopferung", "Bloodscent Slayer", 0, 300, "Wispmother Slayer", 0, 50),
+                new Dungeon("Mondjägerfeste", "Dire Wolf Slayer", 0, 200, "Hulking Werewolf Slayer", 0, 50),
 
                 //Trials
+                new Dungeon("Aetherisches Archiv", "", 1, 1, "", 1, 1, false, false, false, false, true),
+                new Dungeon("Zitadelle von Hel-Ra", "", 1, 1, "", 1, 1, false, false, false, false, true),
+                new Dungeon("Sanctum Ophidia", "", 1, 1, "", 1, 1, false, false, false, false, true)
             };
 
             return createdDungeons;

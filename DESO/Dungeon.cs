@@ -13,13 +13,15 @@
         public bool HardmodeDone { set; get; }
         public bool SpeedrunDone { set; get; }
         public bool NodeathDone { set; get; }
+        public bool IsComplete { set; get; }
+        public bool IsTrial { set; get; }
 
         public Dungeon() { }
 
         public Dungeon(string dungeonName, 
                         string achievementOneName, int achievementOneValue, int achievementOneMax,
                         string achievementTwoName, int achievementTwoValue, int achievementTwoMax,
-                        bool hardmodeDone = false, bool speedrunDone = false, bool nodeathDone = false)
+                        bool hardmodeDone = false, bool speedrunDone = false, bool nodeathDone = false, bool isComplete = false, bool isTrial = false)
         {
             this.DungeonName = dungeonName;
 
@@ -32,6 +34,27 @@
             this.HardmodeDone = hardmodeDone;
             this.SpeedrunDone = speedrunDone;
             this.NodeathDone = nodeathDone;
+            this.IsComplete = isComplete;
+            this.IsTrial = isTrial;
+        }
+
+        public void CheckCompletion()
+        {
+            if (this.AchievementOneValue == this.AchievementOneMax && this.AchievementTwoValue == this.AchievementTwoMax)
+            {
+                if (this.HardmodeDone && this.SpeedrunDone && this.NodeathDone)
+                {
+                    this.IsComplete = true;
+                }
+                else
+                {
+                    this.IsComplete = false;
+                }
+            }
+            else
+            {
+                this.IsComplete = false;
+            }
         }
     }
 }
