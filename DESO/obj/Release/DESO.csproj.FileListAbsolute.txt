@@ -11,3 +11,4 @@ C:\Users\dimit\source\repos\DESO\DESO\obj\Release\DESO.csproj.CoreCompileInputs.
 C:\Users\dimit\source\repos\DESO\DESO\obj\Release\DESO.csproj.CopyComplete
 C:\Users\dimit\source\repos\DESO\DESO\obj\Release\DESO.exe
 C:\Users\dimit\source\repos\DESO\DESO\obj\Release\DESO.pdb
+C:\Users\dimit\source\repos\DESO\DESO\obj\Release\DESO.csprojAssemblyReference.cache

@@ -73,12 +73,12 @@ namespace DESO
 
         private void ButtonSave_Click(object sender, System.EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Sind Sie sicher, dass sie die Einstellungen speichern wollen?.",
+            DialogResult result = MessageBox.Show("Sind Sie sicher, dass sie die Einstellungen speichern wollen?",
                                     "Warnung", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 SaveSettings();
-                DialogResult result2 = MessageBox.Show("Einstellungen gespeichert! Die Einstellungen werden erst nach einem Neustart des Programmes übernommen," + 
+                DialogResult result2 = MessageBox.Show("Einstellungen gespeichert! Die Einstellungen werden erst nach einem Neustart des Programmes übernommen, " + 
                                         "möchten Sie das Programm neu Starten?", "Hinweis", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result2 == DialogResult.Yes)
                 {
