@@ -35,11 +35,19 @@
             this.NewsTab = new System.Windows.Forms.TabPage();
             this.PatchnotesBrowser = new System.Windows.Forms.WebBrowser();
             this.DungeonsTrialsPage = new System.Windows.Forms.TabPage();
+            this.materialDivider5 = new MaterialSkin.Controls.MaterialDivider();
+            this.ButtonCloudrest = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonAsylumSanctorium = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonHallsofFabrication = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonMawofLorkhaj = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonSanctumOphidia = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
             this.ButtonOpenSettings = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonSearch = new MaterialSkin.Controls.MaterialFlatButton();
             this.SearchInputLine = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.ButtonCitadelofHelRa = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonAetherianArchive = new MaterialSkin.Controls.MaterialFlatButton();
+            this.TrialLabel = new MaterialSkin.Controls.MaterialLabel();
             this.TrialIcon = new System.Windows.Forms.PictureBox();
             this.CheckBoxHideCompleted = new MaterialSkin.Controls.MaterialCheckBox();
             this.ButtonRecreateDungeonFile = new MaterialSkin.Controls.MaterialFlatButton();
@@ -69,7 +77,7 @@
             this.ButtonBanishedCellsI = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonBlackheart = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonVolenfell = new MaterialSkin.Controls.MaterialFlatButton();
-            this.ButtonCryptsofHearts = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonCryptsofHeartsI = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.ButtonWayrestII = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonWayrestI = new MaterialSkin.Controls.MaterialFlatButton();
@@ -89,13 +97,9 @@
             this.ButtonFungalGrottoII = new MaterialSkin.Controls.MaterialFlatButton();
             this.ButtonFungalGrottoI = new MaterialSkin.Controls.MaterialFlatButton();
             this.EbonLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
-            this.ButtonSanctumOphidia = new MaterialSkin.Controls.MaterialFlatButton();
-            this.ButtonMawofLorkhaj = new MaterialSkin.Controls.MaterialFlatButton();
-            this.ButtonHallsofFabrication = new MaterialSkin.Controls.MaterialFlatButton();
-            this.TrialLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.ButtonAsylumSanctorium = new MaterialSkin.Controls.MaterialFlatButton();
-            this.ButtonCloudrest = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonCryptofHeartsII = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonMaelstromArena = new MaterialSkin.Controls.MaterialFlatButton();
+            this.ButtonDragonStarArena = new MaterialSkin.Controls.MaterialFlatButton();
             this.MainTabControl.SuspendLayout();
             this.NewsTab.SuspendLayout();
             this.DungeonsTrialsPage.SuspendLayout();
@@ -161,6 +165,10 @@
             // DungeonsTrialsPage
             // 
             this.DungeonsTrialsPage.BackColor = System.Drawing.Color.Silver;
+            this.DungeonsTrialsPage.Controls.Add(this.ButtonDragonStarArena);
+            this.DungeonsTrialsPage.Controls.Add(this.ButtonMaelstromArena);
+            this.DungeonsTrialsPage.Controls.Add(this.ButtonCryptofHeartsII);
+            this.DungeonsTrialsPage.Controls.Add(this.materialDivider5);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonCloudrest);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonAsylumSanctorium);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonHallsofFabrication);
@@ -202,7 +210,7 @@
             this.DungeonsTrialsPage.Controls.Add(this.ButtonBanishedCellsI);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonBlackheart);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonVolenfell);
-            this.DungeonsTrialsPage.Controls.Add(this.ButtonCryptsofHearts);
+            this.DungeonsTrialsPage.Controls.Add(this.ButtonCryptsofHeartsI);
             this.DungeonsTrialsPage.Controls.Add(this.materialDivider1);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonWayrestII);
             this.DungeonsTrialsPage.Controls.Add(this.ButtonWayrestI);
@@ -228,6 +236,113 @@
             this.DungeonsTrialsPage.Size = new System.Drawing.Size(1224, 599);
             this.DungeonsTrialsPage.TabIndex = 1;
             this.DungeonsTrialsPage.Text = "Dungeons & Trials";
+            // 
+            // materialDivider5
+            // 
+            this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider5.Depth = 0;
+            this.materialDivider5.Location = new System.Drawing.Point(-4, 464);
+            this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider5.Name = "materialDivider5";
+            this.materialDivider5.Size = new System.Drawing.Size(752, 3);
+            this.materialDivider5.TabIndex = 61;
+            this.materialDivider5.Text = "materialDivider1";
+            // 
+            // ButtonCloudrest
+            // 
+            this.ButtonCloudrest.AutoSize = true;
+            this.ButtonCloudrest.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonCloudrest.Depth = 0;
+            this.ButtonCloudrest.Icon = null;
+            this.ButtonCloudrest.Location = new System.Drawing.Point(999, 444);
+            this.ButtonCloudrest.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonCloudrest.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonCloudrest.Name = "ButtonCloudrest";
+            this.ButtonCloudrest.Primary = false;
+            this.ButtonCloudrest.Size = new System.Drawing.Size(103, 36);
+            this.ButtonCloudrest.TabIndex = 60;
+            this.ButtonCloudrest.Text = "Wolkenruh";
+            this.ButtonCloudrest.UseVisualStyleBackColor = true;
+            this.ButtonCloudrest.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // ButtonAsylumSanctorium
+            // 
+            this.ButtonAsylumSanctorium.AutoSize = true;
+            this.ButtonAsylumSanctorium.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonAsylumSanctorium.Depth = 0;
+            this.ButtonAsylumSanctorium.Icon = null;
+            this.ButtonAsylumSanctorium.Location = new System.Drawing.Point(999, 396);
+            this.ButtonAsylumSanctorium.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonAsylumSanctorium.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonAsylumSanctorium.Name = "ButtonAsylumSanctorium";
+            this.ButtonAsylumSanctorium.Primary = false;
+            this.ButtonAsylumSanctorium.Size = new System.Drawing.Size(172, 36);
+            this.ButtonAsylumSanctorium.TabIndex = 59;
+            this.ButtonAsylumSanctorium.Text = "Anstalt Sanctorium";
+            this.ButtonAsylumSanctorium.UseVisualStyleBackColor = true;
+            this.ButtonAsylumSanctorium.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // ButtonHallsofFabrication
+            // 
+            this.ButtonHallsofFabrication.AutoSize = true;
+            this.ButtonHallsofFabrication.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonHallsofFabrication.Depth = 0;
+            this.ButtonHallsofFabrication.Icon = null;
+            this.ButtonHallsofFabrication.Location = new System.Drawing.Point(999, 348);
+            this.ButtonHallsofFabrication.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonHallsofFabrication.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonHallsofFabrication.Name = "ButtonHallsofFabrication";
+            this.ButtonHallsofFabrication.Primary = false;
+            this.ButtonHallsofFabrication.Size = new System.Drawing.Size(178, 36);
+            this.ButtonHallsofFabrication.TabIndex = 58;
+            this.ButtonHallsofFabrication.Text = "Hallen der Fertigung";
+            this.ButtonHallsofFabrication.UseVisualStyleBackColor = true;
+            this.ButtonHallsofFabrication.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // ButtonMawofLorkhaj
+            // 
+            this.ButtonMawofLorkhaj.AutoSize = true;
+            this.ButtonMawofLorkhaj.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonMawofLorkhaj.Depth = 0;
+            this.ButtonMawofLorkhaj.Icon = null;
+            this.ButtonMawofLorkhaj.Location = new System.Drawing.Point(999, 300);
+            this.ButtonMawofLorkhaj.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonMawofLorkhaj.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonMawofLorkhaj.Name = "ButtonMawofLorkhaj";
+            this.ButtonMawofLorkhaj.Primary = false;
+            this.ButtonMawofLorkhaj.Size = new System.Drawing.Size(179, 36);
+            this.ButtonMawofLorkhaj.TabIndex = 57;
+            this.ButtonMawofLorkhaj.Text = "Schlund von Lorkhaj";
+            this.ButtonMawofLorkhaj.UseVisualStyleBackColor = true;
+            this.ButtonMawofLorkhaj.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // ButtonSanctumOphidia
+            // 
+            this.ButtonSanctumOphidia.AutoSize = true;
+            this.ButtonSanctumOphidia.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonSanctumOphidia.Depth = 0;
+            this.ButtonSanctumOphidia.Icon = null;
+            this.ButtonSanctumOphidia.Location = new System.Drawing.Point(999, 156);
+            this.ButtonSanctumOphidia.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonSanctumOphidia.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonSanctumOphidia.Name = "ButtonSanctumOphidia";
+            this.ButtonSanctumOphidia.Primary = false;
+            this.ButtonSanctumOphidia.Size = new System.Drawing.Size(144, 36);
+            this.ButtonSanctumOphidia.TabIndex = 56;
+            this.ButtonSanctumOphidia.Text = "Sanctum Ophidia";
+            this.ButtonSanctumOphidia.UseVisualStyleBackColor = true;
+            this.ButtonSanctumOphidia.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // materialDivider4
+            // 
+            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider4.Depth = 0;
+            this.materialDivider4.Location = new System.Drawing.Point(0, 0);
+            this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider4.Name = "materialDivider4";
+            this.materialDivider4.Size = new System.Drawing.Size(1232, 3);
+            this.materialDivider4.TabIndex = 55;
+            this.materialDivider4.Text = "materialDivider1";
             // 
             // ButtonOpenSettings
             // 
@@ -278,8 +393,9 @@
             this.SearchInputLine.Size = new System.Drawing.Size(233, 23);
             this.SearchInputLine.TabIndex = 52;
             this.SearchInputLine.TabStop = false;
-            this.SearchInputLine.Text = "Search...";
+            this.SearchInputLine.Text = "Set Suchen...";
             this.SearchInputLine.UseSystemPasswordChar = false;
+            this.SearchInputLine.Click += new System.EventHandler(this.SearchInputLine_Click);
             // 
             // ButtonCitadelofHelRa
             // 
@@ -292,9 +408,9 @@
             this.ButtonCitadelofHelRa.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonCitadelofHelRa.Name = "ButtonCitadelofHelRa";
             this.ButtonCitadelofHelRa.Primary = false;
-            this.ButtonCitadelofHelRa.Size = new System.Drawing.Size(172, 36);
+            this.ButtonCitadelofHelRa.Size = new System.Drawing.Size(171, 36);
             this.ButtonCitadelofHelRa.TabIndex = 51;
-            this.ButtonCitadelofHelRa.Text = "Zitadelle von Hel-Ra";
+            this.ButtonCitadelofHelRa.Text = "Zitadelle von Hel Ra";
             this.ButtonCitadelofHelRa.UseVisualStyleBackColor = true;
             this.ButtonCitadelofHelRa.Click += new System.EventHandler(this.CallDungeonForm);
             // 
@@ -309,11 +425,24 @@
             this.ButtonAetherianArchive.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonAetherianArchive.Name = "ButtonAetherianArchive";
             this.ButtonAetherianArchive.Primary = false;
-            this.ButtonAetherianArchive.Size = new System.Drawing.Size(172, 36);
+            this.ButtonAetherianArchive.Size = new System.Drawing.Size(156, 36);
             this.ButtonAetherianArchive.TabIndex = 50;
-            this.ButtonAetherianArchive.Text = "Aetherisches Archiv";
+            this.ButtonAetherianArchive.Text = "Ätherische Archiv";
             this.ButtonAetherianArchive.UseVisualStyleBackColor = true;
             this.ButtonAetherianArchive.Click += new System.EventHandler(this.CallDungeonForm);
+            // 
+            // TrialLabel
+            // 
+            this.TrialLabel.AutoSize = true;
+            this.TrialLabel.Depth = 0;
+            this.TrialLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.TrialLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TrialLabel.Location = new System.Drawing.Point(1050, 18);
+            this.TrialLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TrialLabel.Name = "TrialLabel";
+            this.TrialLabel.Size = new System.Drawing.Size(47, 19);
+            this.TrialLabel.TabIndex = 49;
+            this.TrialLabel.Text = "Trials";
             // 
             // TrialIcon
             // 
@@ -550,9 +679,9 @@
             this.ButtonWhiteGoldTower.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonWhiteGoldTower.Name = "ButtonWhiteGoldTower";
             this.ButtonWhiteGoldTower.Primary = false;
-            this.ButtonWhiteGoldTower.Size = new System.Drawing.Size(134, 36);
+            this.ButtonWhiteGoldTower.Size = new System.Drawing.Size(126, 36);
             this.ButtonWhiteGoldTower.TabIndex = 34;
-            this.ButtonWhiteGoldTower.Text = "Weiß-Gold Turm";
+            this.ButtonWhiteGoldTower.Text = "Weißgoldturm";
             this.ButtonWhiteGoldTower.UseVisualStyleBackColor = true;
             this.ButtonWhiteGoldTower.Click += new System.EventHandler(this.CallDungeonForm);
             // 
@@ -748,7 +877,7 @@
             this.ButtonBlackheart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ButtonBlackheart.Depth = 0;
             this.ButtonBlackheart.Icon = null;
-            this.ButtonBlackheart.Location = new System.Drawing.Point(258, 348);
+            this.ButtonBlackheart.Location = new System.Drawing.Point(259, 396);
             this.ButtonBlackheart.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonBlackheart.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonBlackheart.Name = "ButtonBlackheart";
@@ -765,7 +894,7 @@
             this.ButtonVolenfell.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ButtonVolenfell.Depth = 0;
             this.ButtonVolenfell.Icon = null;
-            this.ButtonVolenfell.Location = new System.Drawing.Point(258, 300);
+            this.ButtonVolenfell.Location = new System.Drawing.Point(258, 348);
             this.ButtonVolenfell.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ButtonVolenfell.MouseState = MaterialSkin.MouseState.HOVER;
             this.ButtonVolenfell.Name = "ButtonVolenfell";
@@ -776,22 +905,22 @@
             this.ButtonVolenfell.UseVisualStyleBackColor = true;
             this.ButtonVolenfell.Click += new System.EventHandler(this.CallDungeonForm);
             // 
-            // ButtonCryptsofHearts
+            // ButtonCryptsofHeartsI
             // 
-            this.ButtonCryptsofHearts.AutoSize = true;
-            this.ButtonCryptsofHearts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonCryptsofHearts.Depth = 0;
-            this.ButtonCryptsofHearts.Icon = null;
-            this.ButtonCryptsofHearts.Location = new System.Drawing.Point(258, 252);
-            this.ButtonCryptsofHearts.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonCryptsofHearts.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonCryptsofHearts.Name = "ButtonCryptsofHearts";
-            this.ButtonCryptsofHearts.Primary = false;
-            this.ButtonCryptsofHearts.Size = new System.Drawing.Size(157, 36);
-            this.ButtonCryptsofHearts.TabIndex = 19;
-            this.ButtonCryptsofHearts.Text = "Krypta der Herzen";
-            this.ButtonCryptsofHearts.UseVisualStyleBackColor = true;
-            this.ButtonCryptsofHearts.Click += new System.EventHandler(this.CallDungeonForm);
+            this.ButtonCryptsofHeartsI.AutoSize = true;
+            this.ButtonCryptsofHeartsI.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonCryptsofHeartsI.Depth = 0;
+            this.ButtonCryptsofHeartsI.Icon = null;
+            this.ButtonCryptsofHeartsI.Location = new System.Drawing.Point(258, 252);
+            this.ButtonCryptsofHeartsI.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonCryptsofHeartsI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonCryptsofHeartsI.Name = "ButtonCryptsofHeartsI";
+            this.ButtonCryptsofHeartsI.Primary = false;
+            this.ButtonCryptsofHeartsI.Size = new System.Drawing.Size(164, 36);
+            this.ButtonCryptsofHeartsI.TabIndex = 19;
+            this.ButtonCryptsofHeartsI.Text = "Krypta der Herzen I";
+            this.ButtonCryptsofHeartsI.UseVisualStyleBackColor = true;
+            this.ButtonCryptsofHeartsI.Click += new System.EventHandler(this.CallDungeonForm);
             // 
             // materialDivider1
             // 
@@ -881,9 +1010,9 @@
             this.DaggerfallLabel.Location = new System.Drawing.Point(309, 18);
             this.DaggerfallLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.DaggerfallLabel.Name = "DaggerfallLabel";
-            this.DaggerfallLabel.Size = new System.Drawing.Size(144, 19);
+            this.DaggerfallLabel.Size = new System.Drawing.Size(138, 19);
             this.DaggerfallLabel.TabIndex = 13;
-            this.DaggerfallLabel.Text = "Daggerfall-Covenant";
+            this.DaggerfallLabel.Text = "Dolchsturz-Bündnis";
             // 
             // DaggerfallIcon
             // 
@@ -1068,114 +1197,56 @@
             this.EbonLabel.TabIndex = 0;
             this.EbonLabel.Text = "Ebenherz-Pakt";
             // 
-            // materialDivider4
+            // ButtonCryptofHeartsII
             // 
-            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider4.Depth = 0;
-            this.materialDivider4.Location = new System.Drawing.Point(0, 0);
-            this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider4.Name = "materialDivider4";
-            this.materialDivider4.Size = new System.Drawing.Size(1232, 3);
-            this.materialDivider4.TabIndex = 55;
-            this.materialDivider4.Text = "materialDivider1";
+            this.ButtonCryptofHeartsII.AutoSize = true;
+            this.ButtonCryptofHeartsII.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonCryptofHeartsII.Depth = 0;
+            this.ButtonCryptofHeartsII.Icon = null;
+            this.ButtonCryptofHeartsII.Location = new System.Drawing.Point(259, 300);
+            this.ButtonCryptofHeartsII.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonCryptofHeartsII.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonCryptofHeartsII.Name = "ButtonCryptofHeartsII";
+            this.ButtonCryptofHeartsII.Primary = false;
+            this.ButtonCryptofHeartsII.Size = new System.Drawing.Size(168, 36);
+            this.ButtonCryptofHeartsII.TabIndex = 62;
+            this.ButtonCryptofHeartsII.Text = "Krypta der Herzen II";
+            this.ButtonCryptofHeartsII.UseVisualStyleBackColor = true;
+            this.ButtonCryptofHeartsII.Click += new System.EventHandler(this.CallDungeonForm);
             // 
-            // ButtonSanctumOphidia
+            // ButtonMaelstromArena
             // 
-            this.ButtonSanctumOphidia.AutoSize = true;
-            this.ButtonSanctumOphidia.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonSanctumOphidia.Depth = 0;
-            this.ButtonSanctumOphidia.Icon = null;
-            this.ButtonSanctumOphidia.Location = new System.Drawing.Point(999, 156);
-            this.ButtonSanctumOphidia.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonSanctumOphidia.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonSanctumOphidia.Name = "ButtonSanctumOphidia";
-            this.ButtonSanctumOphidia.Primary = false;
-            this.ButtonSanctumOphidia.Size = new System.Drawing.Size(144, 36);
-            this.ButtonSanctumOphidia.TabIndex = 56;
-            this.ButtonSanctumOphidia.Text = "Sanctum Ophidia";
-            this.ButtonSanctumOphidia.UseVisualStyleBackColor = true;
-            this.ButtonSanctumOphidia.Click += new System.EventHandler(this.CallDungeonForm);
+            this.ButtonMaelstromArena.AutoSize = true;
+            this.ButtonMaelstromArena.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonMaelstromArena.Depth = 0;
+            this.ButtonMaelstromArena.Icon = null;
+            this.ButtonMaelstromArena.Location = new System.Drawing.Point(999, 204);
+            this.ButtonMaelstromArena.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonMaelstromArena.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonMaelstromArena.Name = "ButtonMaelstromArena";
+            this.ButtonMaelstromArena.Primary = false;
+            this.ButtonMaelstromArena.Size = new System.Drawing.Size(155, 36);
+            this.ButtonMaelstromArena.TabIndex = 63;
+            this.ButtonMaelstromArena.Text = "Mahlstrom-Arena";
+            this.ButtonMaelstromArena.UseVisualStyleBackColor = true;
+            this.ButtonMaelstromArena.Click += new System.EventHandler(this.CallDungeonForm);
             // 
-            // ButtonMawofLorkhaj
+            // ButtonDragonStarArena
             // 
-            this.ButtonMawofLorkhaj.AutoSize = true;
-            this.ButtonMawofLorkhaj.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonMawofLorkhaj.Depth = 0;
-            this.ButtonMawofLorkhaj.Icon = null;
-            this.ButtonMawofLorkhaj.Location = new System.Drawing.Point(999, 204);
-            this.ButtonMawofLorkhaj.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonMawofLorkhaj.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonMawofLorkhaj.Name = "ButtonMawofLorkhaj";
-            this.ButtonMawofLorkhaj.Primary = false;
-            this.ButtonMawofLorkhaj.Size = new System.Drawing.Size(179, 36);
-            this.ButtonMawofLorkhaj.TabIndex = 57;
-            this.ButtonMawofLorkhaj.Text = "Schlund von Lorkhaj";
-            this.ButtonMawofLorkhaj.UseVisualStyleBackColor = true;
-            this.ButtonMawofLorkhaj.Click += new System.EventHandler(this.CallDungeonForm);
-            // 
-            // ButtonHallsofFabrication
-            // 
-            this.ButtonHallsofFabrication.AutoSize = true;
-            this.ButtonHallsofFabrication.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonHallsofFabrication.Depth = 0;
-            this.ButtonHallsofFabrication.Icon = null;
-            this.ButtonHallsofFabrication.Location = new System.Drawing.Point(999, 252);
-            this.ButtonHallsofFabrication.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonHallsofFabrication.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonHallsofFabrication.Name = "ButtonHallsofFabrication";
-            this.ButtonHallsofFabrication.Primary = false;
-            this.ButtonHallsofFabrication.Size = new System.Drawing.Size(178, 36);
-            this.ButtonHallsofFabrication.TabIndex = 58;
-            this.ButtonHallsofFabrication.Text = "Hallen der Fertigung";
-            this.ButtonHallsofFabrication.UseVisualStyleBackColor = true;
-            this.ButtonHallsofFabrication.Click += new System.EventHandler(this.CallDungeonForm);
-            // 
-            // TrialLabel
-            // 
-            this.TrialLabel.AutoSize = true;
-            this.TrialLabel.Depth = 0;
-            this.TrialLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.TrialLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.TrialLabel.Location = new System.Drawing.Point(1050, 18);
-            this.TrialLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.TrialLabel.Name = "TrialLabel";
-            this.TrialLabel.Size = new System.Drawing.Size(47, 19);
-            this.TrialLabel.TabIndex = 49;
-            this.TrialLabel.Text = "Trials";
-            // 
-            // ButtonAsylumSanctorium
-            // 
-            this.ButtonAsylumSanctorium.AutoSize = true;
-            this.ButtonAsylumSanctorium.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonAsylumSanctorium.Depth = 0;
-            this.ButtonAsylumSanctorium.Icon = null;
-            this.ButtonAsylumSanctorium.Location = new System.Drawing.Point(1000, 300);
-            this.ButtonAsylumSanctorium.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonAsylumSanctorium.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonAsylumSanctorium.Name = "ButtonAsylumSanctorium";
-            this.ButtonAsylumSanctorium.Primary = false;
-            this.ButtonAsylumSanctorium.Size = new System.Drawing.Size(172, 36);
-            this.ButtonAsylumSanctorium.TabIndex = 59;
-            this.ButtonAsylumSanctorium.Text = "Anstalt Sanctorium";
-            this.ButtonAsylumSanctorium.UseVisualStyleBackColor = true;
-            this.ButtonAsylumSanctorium.Click += new System.EventHandler(this.CallDungeonForm);
-            // 
-            // ButtonCloudrest
-            // 
-            this.ButtonCloudrest.AutoSize = true;
-            this.ButtonCloudrest.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonCloudrest.Depth = 0;
-            this.ButtonCloudrest.Icon = null;
-            this.ButtonCloudrest.Location = new System.Drawing.Point(1000, 348);
-            this.ButtonCloudrest.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ButtonCloudrest.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ButtonCloudrest.Name = "ButtonCloudrest";
-            this.ButtonCloudrest.Primary = false;
-            this.ButtonCloudrest.Size = new System.Drawing.Size(103, 36);
-            this.ButtonCloudrest.TabIndex = 60;
-            this.ButtonCloudrest.Text = "Wolkenruh";
-            this.ButtonCloudrest.UseVisualStyleBackColor = true;
-            this.ButtonCloudrest.Click += new System.EventHandler(this.CallDungeonForm);
+            this.ButtonDragonStarArena.AutoSize = true;
+            this.ButtonDragonStarArena.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonDragonStarArena.Depth = 0;
+            this.ButtonDragonStarArena.Icon = null;
+            this.ButtonDragonStarArena.Location = new System.Drawing.Point(999, 252);
+            this.ButtonDragonStarArena.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ButtonDragonStarArena.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonDragonStarArena.Name = "ButtonDragonStarArena";
+            this.ButtonDragonStarArena.Primary = false;
+            this.ButtonDragonStarArena.Size = new System.Drawing.Size(175, 36);
+            this.ButtonDragonStarArena.TabIndex = 64;
+            this.ButtonDragonStarArena.Text = "Drachenstern-Arena";
+            this.ButtonDragonStarArena.UseVisualStyleBackColor = true;
+            this.ButtonDragonStarArena.Click += new System.EventHandler(this.CallDungeonForm);
             // 
             // Main
             // 
@@ -1231,7 +1302,7 @@
         private MaterialSkin.Controls.MaterialFlatButton ButtonWayrestI;
         private MaterialSkin.Controls.MaterialFlatButton ButtonWayrestII;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private MaterialSkin.Controls.MaterialFlatButton ButtonCryptsofHearts;
+        private MaterialSkin.Controls.MaterialFlatButton ButtonCryptsofHeartsI;
         private MaterialSkin.Controls.MaterialFlatButton ButtonVolenfell;
         private MaterialSkin.Controls.MaterialFlatButton ButtonBlackheart;
         private MaterialSkin.Controls.MaterialFlatButton ButtonBanishedCellsI;
@@ -1273,6 +1344,10 @@
         private MaterialSkin.Controls.MaterialLabel TrialLabel;
         private MaterialSkin.Controls.MaterialFlatButton ButtonAsylumSanctorium;
         private MaterialSkin.Controls.MaterialFlatButton ButtonCloudrest;
+        private MaterialSkin.Controls.MaterialDivider materialDivider5;
+        private MaterialSkin.Controls.MaterialFlatButton ButtonCryptofHeartsII;
+        private MaterialSkin.Controls.MaterialFlatButton ButtonMaelstromArena;
+        private MaterialSkin.Controls.MaterialFlatButton ButtonDragonStarArena;
     }
 }
 

@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using System.Diagnostics;
-using MaterialSkin;
-using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 
 namespace DESO
@@ -16,6 +13,7 @@ namespace DESO
         public List<MaterialFlatButton> _activeDungeonButtons;
 
         public bool ShowAllDungeons = true;
+        private bool HasSearched = false;
 
         public Main()
         {
@@ -35,8 +33,8 @@ namespace DESO
 
             // HIDE UNFINISHED
 
-            SearchInputLine.Visible = false;
-            ButtonSearch.Visible = false;
+            SearchInputLine.Visible = true;
+            ButtonSearch.Visible = true;
 
             // HIDE UNFINISHED
         }
@@ -104,11 +102,11 @@ namespace DESO
             if (result == DialogResult.Yes)
             {
                 DialogResult result2 = MessageBox.Show("Möchten Sie Ihre bisherigen eigetragenen Daten behalten?", "Warnung",
-                                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                                        MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result2 == DialogResult.Yes)
                 {
                     UpdateDungeonFile();
-                    ChangeAllButtonsVisibility(true);
+                    ChangeAllButtonsVisibility(ShowAllDungeons);
                 }
                 else if (result2 == DialogResult.No)
                 {
@@ -119,10 +117,9 @@ namespace DESO
                     for (int i = 0; i < _dungeons.Count; i++)
                     {
                         _dungeons[i].CheckCompletion();
-                        //Debug.Print(_dungeons[i].DungeonName + _dungeons[i].IsComplete.ToString());
                     }
 
-                    ChangeAllButtonsVisibility(true);
+                    ChangeAllButtonsVisibility(ShowAllDungeons);
                 }
                 else
                 {
@@ -159,12 +156,18 @@ namespace DESO
 
         private void CheckBoxHideCompleted_CheckedChanged(object sender, System.EventArgs e)
         {
+            if(HasSearched)
+                SearchForSet(null, null);
+
             ChangeAllButtonsVisibility(!CheckBoxHideCompleted.Checked);
             ShowAllDungeons = !CheckBoxHideCompleted.Checked;
         }
 
         public void ChangeAllButtonsVisibility(bool state)
         {
+            if (HasSearched)
+                return;
+
             for (int i = 0; i < _dungeons.Count; i++)
             {
                 for (int j = 0; j < _activeDungeonButtons.Count; j++)
@@ -184,9 +187,40 @@ namespace DESO
             }
         }
 
+        private void SearchInputLine_Click(object sender, System.EventArgs e)
+        {
+            SearchInputLine.Text = "";
+        }
+
         private void SearchForSet(object sender, System.EventArgs e)
         {
-            
+            if (HasSearched)
+            {
+                HasSearched = false;
+                ChangeAllButtonsVisibility(ShowAllDungeons);
+                return;
+            }
+
+            if (SearchInputLine.Text == "")
+                return;
+
+            HasSearched = true;
+            for (int i = 0; i < _dungeons.Count; i++)
+            {
+                int contains = 0;
+                for (int j = 0; j < _dungeons[i].Sets.Count; j++)
+                {
+                    if (_dungeons[i].Sets[j].SetName.Contains(SearchInputLine.Text))
+                    {
+                        contains++;
+                    }
+                }
+
+                if(contains == 0)
+                    _activeDungeonButtons.Find(x => x.Text == _dungeons[i].DungeonName).Enabled = false;
+                else
+                    _activeDungeonButtons.Find(x => x.Text == _dungeons[i].DungeonName).Enabled = true;
+            }
         }
 
         private void CallSettingsForm(object sender, System.EventArgs e)

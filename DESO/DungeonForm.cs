@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Drawing;
 using MaterialSkin.Controls;
 
 namespace DESO
@@ -22,7 +23,7 @@ namespace DESO
 
         private void DungeonForm_Shown(object sender, System.EventArgs e)
         {
-            UpdateDungeonData();
+            InitializeDungeonData();
         }
 
         private void DungeonForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -33,6 +34,78 @@ namespace DESO
         }
 
         /* ---   DUNGEON DATA HANDLING   --- */
+
+        private void InitializeDungeonData()
+        {
+            if (!CurrentDungeon.IsTrial)
+            {
+                TrialArmorSet0.Visible = false;
+                TrialArmorSet1.Visible = false;
+                LightArmorLabel.Text = CurrentDungeon.Sets[0].SetName;
+                MediumArmorLabel.Text = CurrentDungeon.Sets[1].SetName;
+                HeavyArmorLabel.Text = CurrentDungeon.Sets[2].SetName;
+                MonsterSetLabel.Text = CurrentDungeon.Sets[3].SetName;
+            }
+            else if (CurrentDungeon.IsTrial)
+            {
+                AchievementOneCheckBox.Visible = false;
+                AchievementOneBar.Visible = false;
+                AchievementOneInput.Visible = false;
+
+                AchievementTwoCheckBox.Visible = false;
+                AchievementTwoBar.Visible = false;
+                AchievementTwoInput.Visible = false;
+
+                LightArmorLabel.Text = CurrentDungeon.Sets[0].SetName;
+                MediumArmorLabel.Text = CurrentDungeon.Sets[1].SetName;
+                HeavyArmorLabel.Text = CurrentDungeon.Sets[2].SetName;
+                MonsterSetLabel.Text = CurrentDungeon.Sets[3].SetName;
+
+                if (CurrentDungeon.Sets.Count >= 5)
+                {
+                    TrialArmorSet0.Visible = true;
+                    TrialArmorSet0.Text = CurrentDungeon.Sets[4].SetName;
+                }
+                else
+                    TrialArmorSet0.Visible = false;
+
+                if (CurrentDungeon.Sets.Count >= 6)
+                {
+                    TrialArmorSet1.Visible = true;
+                    TrialArmorSet1.Text = CurrentDungeon.Sets[5].SetName;
+                }
+                else
+                    TrialArmorSet1.Visible = false;
+
+                if (CurrentDungeon.Sets.Count >= 7)
+                {
+                    TrialArmorSet2.Visible = true;
+                    TrialArmorSet2.Text = CurrentDungeon.Sets[6].SetName;
+                }
+                else
+                    TrialArmorSet2.Visible = false;
+
+                if (CurrentDungeon.Sets.Count >= 8)
+                {
+                    TrialArmorSet3.Visible = true;
+                    TrialArmorSet3.Text = CurrentDungeon.Sets[7].SetName;
+                }
+                else
+                    TrialArmorSet3.Visible = false;
+            }
+
+            this.Height = 225;
+            for (int i = 0; i < CurrentDungeon.Sets.Count; i++)
+            {
+                this.Height = Height + 30;
+            }
+
+            CheckBoxHardmode.Visible = CurrentDungeon.HasHardmode;
+            CheckBoxSpeedrun.Visible = CurrentDungeon.HasSpeedrun;
+            CheckBoxNoDeath.Visible = CurrentDungeon.HasNoDeath;
+
+            UpdateDungeonData();
+        }
 
         private void UpdateDungeonData()
         {
@@ -59,16 +132,8 @@ namespace DESO
                 AchievementTwoBar.Value = CurrentDungeon.AchievementTwoValue;
                 AchievementTwoInput.Text = CurrentDungeon.AchievementTwoValue.ToString();
             }
-            else
-            {
-                AchievementOneCheckBox.Visible = false;
-                AchievementOneBar.Visible = false;
-                AchievementOneInput.Visible = false;
 
-                AchievementTwoCheckBox.Visible = false;
-                AchievementTwoBar.Visible = false;
-                AchievementTwoInput.Visible = false;
-            }
+            CheckBoxVeteran.Checked = CurrentDungeon.DoneOnVet;
 
             CheckBoxHardmode.Checked = CurrentDungeon.HardmodeDone;
             CheckBoxSpeedrun.Checked = CurrentDungeon.SpeedrunDone;
@@ -90,7 +155,6 @@ namespace DESO
                 {
                     CurrentDungeon.CheckCompletion();
                     mainForm._dungeons[i] = CurrentDungeon;
-                    Debug.Print(CurrentDungeon.IsComplete.ToString());
                     break;
                 }
             }
@@ -103,8 +167,11 @@ namespace DESO
         {
             AchievementOneInput.Text = Regex.Replace(AchievementOneInput.Text, "[^0-9]", "");
 
-            if (AchievementOneInput.Text != null && AchievementOneInput.Text != "")
+            if (AchievementOneInput.Text != null)
             {
+                if (AchievementOneInput.Text == "")
+                    AchievementOneInput.Text = 0.ToString();
+
                 int value = System.Convert.ToInt32(AchievementOneInput.Text);
 
                 if (value > AchievementOneBar.Maximum)
@@ -122,8 +189,11 @@ namespace DESO
         {
             AchievementTwoInput.Text = Regex.Replace(AchievementTwoInput.Text, "[^0-9]", "");
 
-            if (AchievementTwoInput.Text != null && AchievementTwoInput.Text != "")
+            if (AchievementTwoInput.Text != null)
             {
+                if (AchievementTwoInput.Text == "")
+                    AchievementTwoInput.Text = 0.ToString();
+
                 int value = System.Convert.ToInt32(AchievementTwoInput.Text);
 
                 if (value > AchievementTwoBar.Maximum)
@@ -152,9 +222,20 @@ namespace DESO
                 case "No Death":
                     CurrentDungeon.NodeathDone = checkBox.Checked;
                     break;
+                case "Veteran":
+                    CurrentDungeon.DoneOnVet = checkBox.Checked;
+                    break;
                 default:
                     break;
             }
+
+            UpdateDungeonData();
+        }
+
+        private void SetLabelClicked(object sender, System.EventArgs e)
+        {
+            string url = CurrentDungeon.Sets.Find(x => x.SetName == ((MaterialLabel)sender).Text).SetURL;
+            System.Diagnostics.Process.Start(url);
         }
         /* ---   DUNGEON DATA HANDLING   --- */
     }
